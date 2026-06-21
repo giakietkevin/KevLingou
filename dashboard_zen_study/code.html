@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heatmap-cell {
+            aspect-ratio: 1/1;
+            border-radius: 2px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#474743",
+                      "tertiary-container": "#856070",
+                      "surface-tint": "#516447",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-container": "#63635f",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-high": "#eae7e7",
+                      "on-primary-container": "#ddf3cd",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d4e9c4",
+                      "surface-variant": "#e4e2e1",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#2d1320",
+                      "surface": "#fcf9f8",
+                      "on-surface-variant": "#444840",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#303030",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#3a4c30",
+                      "on-surface": "#1b1c1c",
+                      "tertiary-fixed-dim": "#e7bacc",
+                      "inverse-primary": "#b8cda9",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#e1dfda",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#6b4858",
+                      "error-container": "#ffdad6",
+                      "secondary": "#5f5e5b",
+                      "surface-container-highest": "#e4e2e1",
+                      "secondary-fixed-dim": "#c8c6c2",
+                      "primary-container": "#5d7052",
+                      "tertiary-fixed": "#ffd8e7",
+                      "surface-bright": "#fcf9f8",
+                      "primary-fixed-dim": "#b8cda9",
+                      "outline-variant": "#c4c8bd",
+                      "on-background": "#1b1c1c",
+                      "primary": "#45573b",
+                      "on-secondary-fixed": "#1b1c19",
+                      "background": "#fcf9f8",
+                      "on-tertiary-fixed-variant": "#5e3d4c",
+                      "outline": "#74786f",
+                      "on-tertiary-container": "#ffe6ee",
+                      "inverse-on-surface": "#f3f0f0",
+                      "surface-container": "#f0eded",
+                      "secondary-fixed": "#e4e2dd",
+                      "on-primary-fixed": "#0f1f09"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "container-max": "1120px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist"],
+                      "japanese-display": ["Noto Sans JP"],
+                      "body-md": ["Geist"],
+                      "headline-md": ["Geist"],
+                      "display-lg-mobile": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "label-sm": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "japanese-display": ["64px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
+<!-- SideNavBar (Authority: JSON & Style Guidance) -->
+<aside class="h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline flex flex-col h-full py-unit-8 px-unit-4 bg-surface z-50">
+<div class="mb-unit-8 px-unit-2">
+<h1 class="font-display-lg text-display-lg text-primary">Kevlingou</h1>
+<p class="font-body-md text-secondary-fixed-dim">N2 Level</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-unit-4 py-unit-3 transition-all duration-200 hover:bg-surface-container text-primary font-bold border-r-2 border-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-unit-4 py-unit-3 transition-all duration-200 hover:bg-surface-container text-secondary" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span>Modules</span>
+</a>
+<a class="flex items-center gap-4 px-unit-4 py-unit-3 transition-all duration-200 hover:bg-surface-container text-secondary" href="#">
+<span class="material-symbols-outlined">style</span>
+<span>SRS Review</span>
+</a>
+<a class="flex items-center gap-4 px-unit-4 py-unit-3 transition-all duration-200 hover:bg-surface-container text-secondary" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span>AI Tutor</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full bg-primary-container text-on-primary-container py-unit-3 rounded-lg font-bold transition-transform scale-98 active:scale-95">
+                Start Daily Review
+            </button>
+<a class="flex items-center gap-4 px-unit-4 py-unit-2 text-secondary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center h-16 px-margin-desktop">
+<div class="flex items-center gap-gutter">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Kevlingou</h2>
+</div>
+<div class="flex items-center gap-unit-4">
+<div class="flex items-center gap-unit-2 px-unit-3 py-unit-1 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-bold text-on-surface">15 Days</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors">notifications</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a student, minimalist lighting with soft shadows. The background is a clean, neutral stone color. The student has a calm, focused expression, matching the scholarly and intentional brand identity of the Kevlingou app. Digital art photography style with high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQALNjkL1R73uELOonQC3Sd-ZHHspLklhkoCB8gNf5XewOGgKzR8pgU_x5mw1iRz2lZEINKCbH68Ke01d9PN70jzch2lj46AX-S8N79Z_C2zM5x3ZKHguwAGPy3vLsrT4mz5LRzKCndUMDUyAcMYx02Nsm2QbAdQZ5aoSUm6W0WAqlahgWD_YtC0OTSa1Cy_2Co9p_8N-UZaBTLfjw3Ydr3kLybP2vbS8jhN0RR4wlfTTcU6duFo-JPo0CJjIL9T2lvGmSiJdZbgw"/>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="pt-24 px-margin-desktop pb-unit-12">
+<!-- Bento Layout Container -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Daily Progress Heatmap (Hero Section) -->
+<section class="col-span-12 border border-outline-variant rounded-xl p-unit-6 bg-surface-container-lowest">
+<div class="flex justify-between items-end mb-unit-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-unit-1">Daily Progress</h3>
+<p class="text-secondary">Visualizing your language immersion journey over the last 6 months.</p>
+</div>
+<div class="text-right">
+<span class="text-display-lg font-display-lg text-primary leading-none">1,240</span>
+<p class="text-label-sm uppercase tracking-widest text-secondary">Words Mastered</p>
+</div>
+</div>
+<!-- Contribution Grid -->
+<div class="overflow-x-auto no-scrollbar py-unit-2">
+<div class="grid grid-flow-col grid-rows-7 gap-1 min-w-max" id="heatmap">
+<!-- JS will populate 26 weeks (6 months approx) -->
+</div>
+</div>
+<div class="mt-unit-4 flex items-center justify-end gap-unit-2 text-label-sm text-secondary">
+<span>Less</span>
+<div class="w-3 h-3 bg-surface-container-high rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-fixed-dim rounded-sm"></div>
+<div class="w-3 h-3 bg-primary-container rounded-sm"></div>
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+<div class="w-3 h-3 bg-on-primary-fixed-variant rounded-sm"></div>
+<span>More</span>
+</div>
+</section>
+<!-- Today's Review Queue Card -->
+<article class="col-span-12 md:col-span-4 border border-outline-variant rounded-xl p-unit-6 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 hover:shadow-lg hover:border-primary cursor-pointer">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-unit-2" style="font-variation-settings: 'FILL' 1;">style</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Today's Review</h4>
+<p class="text-secondary mt-unit-1">Spaced Repetition System</p>
+</div>
+<div class="mt-unit-8 relative z-10">
+<div class="flex items-baseline gap-unit-2">
+<span class="text-display-lg font-display-lg text-primary">45</span>
+<span class="text-secondary">cards due</span>
+</div>
+<button class="mt-unit-4 w-full border border-outline py-unit-2 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-colors">Start Session</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">psychology</span>
+</div>
+</article>
+<!-- Daily Streak Widget -->
+<article class="col-span-12 md:col-span-4 border border-outline-variant rounded-xl p-unit-6 bg-primary-container text-on-primary-container flex items-center justify-between">
+<div>
+<h4 class="font-headline-md text-headline-md font-bold mb-unit-1">15 Days</h4>
+<p class="text-on-primary-container/80">Consistency is key to mastery.</p>
+<div class="mt-unit-4 flex gap-1">
+<div class="h-1 w-6 bg-on-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-on-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-on-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-on-primary-container/30 rounded-full"></div>
+<div class="h-1 w-6 bg-on-primary-container/30 rounded-full"></div>
+</div>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div class="absolute inset-0 animate-ping opacity-20 bg-white rounded-full"></div>
+</div>
+</article>
+<!-- AI Tutor Quick Talk -->
+<article class="col-span-12 md:col-span-4 border border-outline-variant rounded-xl p-unit-6 bg-tertiary-container text-on-tertiary-container relative overflow-hidden">
+<h4 class="font-headline-md text-headline-md font-bold mb-unit-1">Quick Session</h4>
+<p class="text-on-tertiary-container/80">5 min audio practice.</p>
+<button class="mt-unit-6 bg-on-tertiary-container text-tertiary-container px-unit-6 py-unit-2 rounded-full font-bold flex items-center gap-unit-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">play_arrow</span>
+                        Listen Now
+                    </button>
+</article>
+<!-- Current Modules Grid -->
+<div class="col-span-12">
+<h3 class="font-headline-md text-headline-md text-primary mb-unit-6">Current Modules</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Module: Hiragana -->
+<div class="bg-surface-container-low p-unit-6 rounded-xl border border-outline-variant flex items-center gap-unit-6 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative w-20 h-20 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-outline-variant" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="22" stroke-width="6"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-bold text-primary">90%</span>
+</div>
+<div>
+<p class="text-label-sm font-japanese-display text-secondary-fixed-dim">あいうえお</p>
+<h5 class="font-headline-md text-headline-md font-bold">Hiragana</h5>
+<p class="text-secondary text-body-md">Writing &amp; Sound</p>
+</div>
+</div>
+<!-- Module: N5 Kanji -->
+<div class="bg-surface-container-low p-unit-6 rounded-xl border border-outline-variant flex items-center gap-unit-6 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative w-20 h-20 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-outline-variant" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="130" stroke-width="6"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-bold text-primary">42%</span>
+</div>
+<div>
+<p class="text-label-sm font-japanese-display text-secondary-fixed-dim">日本語の漢字</p>
+<h5 class="font-headline-md text-headline-md font-bold">N5 Kanji</h5>
+<p class="text-secondary text-body-md">Daily Logograms</p>
+</div>
+</div>
+<!-- Module: N5 Grammar -->
+<div class="bg-surface-container-low p-unit-6 rounded-xl border border-outline-variant flex items-center gap-unit-6 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="relative w-20 h-20 flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-outline-variant" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="90" stroke-width="6"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-bold text-primary">60%</span>
+</div>
+<div>
+<p class="text-label-sm font-japanese-display text-secondary-fixed-dim">文法</p>
+<h5 class="font-headline-md text-headline-md font-bold">N5 Grammar</h5>
+<p class="text-secondary text-body-md">Sentence Structure</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Graphic / Motivational Section -->
+<div class="col-span-12 border border-outline-variant rounded-xl overflow-hidden h-64 relative group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A serene, minimalist Japanese Zen garden with smooth raked sand, a single weathered stone, and a hint of soft morning sunlight filtering through maple leaves. High whitespace, calm atmosphere, and neutral earthy tones. Photography style, high-end travel and lifestyle aesthetic, soft focus background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx8vG8ZZD_d6y_QkqVcL9tEFG1b8jylBT0Pg8iKBwk5z9Ff00KMov3E9J9UJDsVbqZRwJ_g3N_0OSIRI_baBunaiju5K7NLXDiBb47WgSoRX6Kom9aCDJFMKFCttrbfugJPhT5D90urFLEQtxDKNFg0Y_CdmhqQatWZB7Ys58ReXDUfNUfgs4X74dHj02SsWitRPKPQ4J8q5mYslNsz4iPsYFqyYgMMycsUK5TgtMq1RWZGdU5j9rLQmsOfdcwlU5HXzVNUX20lFo')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent flex items-center px-unit-12">
+<div class="max-w-md">
+<h2 class="font-japanese-display text-display-lg text-primary">継続は力なり</h2>
+<p class="font-body-lg text-body-lg text-on-surface mt-unit-2">"Continuity is power." Small steps every day lead to profound understanding.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Generate Heatmap Cells for 6 Months (approx 26 weeks)
+        const heatmap = document.getElementById('heatmap');
+        const intensityClasses = [
+            'bg-surface-container-high', // 0
+            'bg-primary-fixed-dim',      // 1
+            'bg-primary-container',      // 2
+            'bg-primary',               // 3
+            'bg-on-primary-fixed-variant' // 4
+        ];
+
+        for (let i = 0; i < 26 * 7; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'heatmap-cell w-3 h-3 transition-colors duration-300';
+            // Random intensity for demo
+            const intensity = Math.floor(Math.random() * 5);
+            cell.classList.add(intensityClasses[intensity]);
+            heatmap.appendChild(cell);
+        }
+
+        // Simple mouse interaction for heatmap
+        document.querySelectorAll('.heatmap-cell').forEach(cell => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.transform = 'scale(1.5)';
+                cell.style.zIndex = '10';
+            });
+            cell.addEventListener('mouseleave', () => {
+                cell.style.transform = 'scale(1)';
+                cell.style.zIndex = '1';
+            });
+        });
+    </script>
+</body></html>
