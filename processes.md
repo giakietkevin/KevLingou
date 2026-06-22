@@ -27,13 +27,13 @@
 - [ ] Responsive design cho mobile
 
 ### 2.2 Learning Module - Module học tập
-- [ ] Xây dựng cấu trúc lesson
-- [ ] Hiển thị nội dung Hiragana/Katakana
-- [ ] Hiển thị nội dung Vocabulary
-- [ ] Hiển thị nội dung Grammar
-- [ ] Hiển thị nội dung Kanji
-- [ ] Thêm kanji analysis (radical breakdown)
-- [ ] Phân trang giữa các level (N5, N4, N3, N2)
+- [x] Xây dựng cấu trúc lesson
+- [x] Hiển thị nội dung Hiragana/Katakana
+- [x] Hiển thị nội dung Vocabulary
+- [x] Hiển thị nội dung Grammar
+- [x] Hiển thị nội dung Kanji
+- [x] Thêm kanji analysis (radical breakdown)
+- [x] Phân trang giữa các level (N5, N4, N3, N2)
 
 ### 2.3 SRS Flashcards - Hệ thống thẻ ghi nhớ
 - [ ] Thiết kế interface flashcard
